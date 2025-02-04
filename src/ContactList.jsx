@@ -1,30 +1,30 @@
 import { useState, useEffect} from 'react';
 
 const ContactList = () => {
-  const [ allContact, setAllContact ] = useState([]);
+  const [ contacts, setContacts ] = useState([]);
 
   useEffect(() => {
 
-    const getContact = async() => {
+    const getContacts = async() => {
       const response =  await fetch('https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users');
       // console.log(response)
       const jsonObj = await response.json();
       console.log(jsonObj)
       const retrievedContact = jsonObj;
-      setAllContact(retrievedContact);
+      setContacts(retrievedContact);
 
     }
-    getContact();
+    getContacts();
   }, []);
 
 
   return (
     <ol>
       {
-        allContact.map((props) => {
+        contacts.map((contact) => {
           return (
-            <li key={allContact.id}>
-              {allContact.username}
+            <li key={contact.id}>
+              {contact.username}
             </li>
           )
         })
