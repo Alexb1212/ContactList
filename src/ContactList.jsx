@@ -23,7 +23,8 @@ const ContactList = () => {
       {
         contacts.map((contact) => {
           return (
-            <li key={contact.id}>
+            <li key={contact.id}
+            onClick={() => {props.setSelectedContacts(contact)}}>
               {contact.username}
             </li>
           )
