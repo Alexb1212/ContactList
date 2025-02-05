@@ -12,7 +12,7 @@ const App = () => {
 
      {
       selectedContact.id ?
-      <ContactList setSelectedContact={setSelectedContact}/>
+      <ContactList setSelectedContact={setSelectedContact}/> :
       <ContactDetails selectedContact={selectedContact}/>
      }
     
